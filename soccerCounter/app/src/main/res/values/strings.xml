@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">Soccer Counter</string>
+    <string name="plus_one_point">+1 Point</string>
+    <string name="plus_one_foul">+1 Foul</string>
+    <string name="team_a">Team A</string>
+    <string name="team_b">Team B</string>
+    <string name="fouls">Fouls: </string>
+    <string name="reset">Reset</string>
+</resources>
