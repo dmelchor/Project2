@@ -7,13 +7,13 @@ import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
 
-    int scoreA = 0;
+    private int scoreA = 0;
 
-    int scoreB = 0;
+    private int scoreB = 0;
 
-    int foulsA = 0;
+    private int foulsA = 0;
 
-    int foulsB = 0;
+    private int foulsB = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
