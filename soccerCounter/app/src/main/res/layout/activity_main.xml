@@ -1,163 +1,168 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <LinearLayout
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
+        android:layout_height="match_parent"
         tools:context="com.example.android.soccercounter.MainActivity">
 
         <LinearLayout
-            android:layout_weight="1"
-            android:layout_width="0dp"
+            android:id="@+id/main_info"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical">
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:gravity="center_horizontal"
-                android:padding="4dp"
-                android:textSize="24dp"
-                android:text="@string/team_a"/>
-
-            <TextView
-                android:id="@+id/team_a_score"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:gravity="center_horizontal"
-                android:padding="4dp"
-                android:textSize="72dp"
-                android:text="0"/>
+            android:orientation="horizontal">
 
             <LinearLayout
-                android:layout_width="match_parent"
+                android:layout_weight="1"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:gravity="center_horizontal"
-                android:orientation="horizontal">
+                android:orientation="vertical">
 
                 <TextView
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:paddingRight="4dp"
-                    android:textSize="16dp"
-                    android:text="@string/fouls"/>
+                    android:gravity="center_horizontal"
+                    android:padding="4dp"
+                    android:textSize="24sp"
+                    android:text="@string/team_a"/>
 
                 <TextView
-                    android:id="@+id/team_a_fouls"
-                    android:layout_width="wrap_content"
+                    android:id="@+id/team_a_score"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:textSize="16dp"
+                    android:gravity="center_horizontal"
+                    android:padding="4dp"
+                    android:textSize="72sp"
                     android:text="0"/>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_horizontal"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingRight="4dp"
+                        android:textSize="16sp"
+                        android:text="@string/fouls"/>
+
+                    <TextView
+                        android:id="@+id/team_a_fouls"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="16sp"
+                        android:text="0"/>
+
+                </LinearLayout>
+
+                <Button
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_horizontal"
+                    android:layout_margin="8dp"
+                    android:textSize="24sp"
+                    android:text="@string/plus_one_point"
+                    android:onClick="plusOneTeamA"/>
+
+                <Button
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_horizontal"
+                    android:layout_margin="8dp"
+                    android:textSize="24sp"
+                    android:text="@string/plus_one_foul"
+                    android:onClick="plusFoulTeamA"/>
 
             </LinearLayout>
 
-            <Button
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:gravity="center_horizontal"
-                android:layout_margin="8dp"
-                android:textSize="24dp"
-                android:text="@string/plus_one_point"
-                android:onClick="plusOneTeamA"/>
-
-            <Button
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:gravity="center_horizontal"
-                android:layout_margin="8dp"
-                android:textSize="24dp"
-                android:text="@string/plus_one_foul"
-                android:onClick="plusFoulTeamA"/>
-
-        </LinearLayout>
-
-        <View
-            android:layout_width="1dp"
-            android:layout_height="match_parent"
-            android:layout_marginTop="16dp"
-            android:background="@android:color/darker_gray">
-        </View>
-
-        <LinearLayout
-            android:layout_weight="1"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:orientation="vertical">
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:gravity="center_horizontal"
-                android:padding="4dp"
-                android:textSize="24dp"
-                android:text="@string/team_b"/>
-
-            <TextView
-                android:id="@+id/team_b_score"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:gravity="center_horizontal"
-                android:padding="4dp"
-                android:textSize="72dp"
-                android:text="0"/>
+            <View
+                android:id="@+id/middle_line"
+                android:layout_width="1dp"
+                android:layout_height="match_parent"
+                android:layout_marginTop="16dp"
+                android:background="@android:color/darker_gray">
+            </View>
 
             <LinearLayout
-                android:layout_width="match_parent"
+                android:layout_weight="1"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:gravity="center_horizontal"
-                android:orientation="horizontal">
+                android:orientation="vertical">
 
                 <TextView
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:paddingRight="4dp"
-                    android:textSize="16dp"
-                    android:text="@string/fouls"/>
+                    android:gravity="center_horizontal"
+                    android:padding="4dp"
+                    android:textSize="24sp"
+                    android:text="@string/team_b"/>
 
                 <TextView
-                    android:id="@+id/team_b_fouls"
-                    android:layout_width="wrap_content"
+                    android:id="@+id/team_b_score"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:textSize="16dp"
+                    android:gravity="center_horizontal"
+                    android:padding="4dp"
+                    android:textSize="72sp"
                     android:text="0"/>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_horizontal"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingRight="4dp"
+                        android:textSize="16sp"
+                        android:text="@string/fouls"/>
+
+                    <TextView
+                        android:id="@+id/team_b_fouls"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="16sp"
+                        android:text="0"/>
+
+                </LinearLayout>
+
+                <Button
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_horizontal"
+                    android:layout_margin="8dp"
+                    android:textSize="24sp"
+                    android:text="@string/plus_one_point"
+                    android:onClick="plusOneTeamB"/>
+
+                <Button
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_horizontal"
+                    android:layout_margin="8dp"
+                    android:textSize="24sp"
+                    android:text="@string/plus_one_foul"
+                    android:onClick="plusFoulTeamB"/>
 
             </LinearLayout>
 
-            <Button
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:gravity="center_horizontal"
-                android:layout_margin="8dp"
-                android:textSize="24dp"
-                android:text="@string/plus_one_point"
-                android:onClick="plusOneTeamB"/>
-
-            <Button
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:gravity="center_horizontal"
-                android:layout_margin="8dp"
-                android:textSize="24dp"
-                android:text="@string/plus_one_foul"
-                android:onClick="plusFoulTeamB"/>
-
         </LinearLayout>
 
-    </LinearLayout>
+        <Button
+            android:layout_centerHorizontal="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="24sp"
+            android:text="@string/reset"
+            android:onClick="reset" />
 
-    <Button
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="32dp"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textSize="24dp"
-        android:text="@string/reset"
-        android:onClick="reset"/>
+    </RelativeLayout>
 
-</RelativeLayout>
+</ScrollView>
